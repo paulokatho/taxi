@@ -11,13 +11,16 @@ public class TaxiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TaxiApplication.class, args);
 
-		Taxi taxi = new Taxi() {
-			@Override
-			public void reservar() {
-				System.out.println("Interface: Implementação da classe de forma anônima");
-			}
+		// () não tem parâmetros e por isso só abre e fecha parênteses
+		// o que está entre {} é chamado de body
+		// lambda exige que tenha 1 único e somente 1 método abstrado
+		Taxi taxi = (origem, destino) -> {
+				System.out.println("Taxi reservado. Origem: " + origem + " => Destino: " + destino);
+			System.out.println("");
+				return 3900.00;
 		};
-		taxi.reservar();
+		
+		taxi.reservar("Cafelândia - SP", "Lisboa - PT");
 	}
 
 }
