@@ -6,8 +6,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class TaxiImpl implements Taxi {
 
+//    @Override
+//    public void reservar() {
+//        System.out.println("Taxi reservado: ");
+//    }
+
     @Override
-    public void reservar() {
-        System.out.println("Taxi reservado: ");
+    public double reservar(String origem, String destino) {
+        return 0;
     }
 }
